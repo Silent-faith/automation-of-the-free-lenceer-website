@@ -38,8 +38,6 @@ Links = data.find_all("h2", class_ = "ProjectTable-title")
 
 df = []
 for i in range (len(Links)) :
-    if i == 2 :
-        break
     try :
         Link_data =  Links[i]
         Link_data = Link_data.find('a')
