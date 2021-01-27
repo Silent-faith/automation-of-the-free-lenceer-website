@@ -98,7 +98,7 @@ for i in range (len(Links)) :
         
         place_bid = driver.find_element_by_xpath("//button[@data-color='secondary']")
         place_bid.click()
-        
+        sleep(5)         
     except :
         pass 
 
