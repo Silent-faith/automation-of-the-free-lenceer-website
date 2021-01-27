@@ -1,40 +1,20 @@
 #import parameters
 from time import sleep
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup as bs
 
 
-def content(s) :
-    c = -1 
-    ans = ""
-    s = str(s)
-    for i in s :
-        if i == "<" :
-            c = -1 
-        if c != -1 :
-            ans += str(i)
-        if i == ">" :
-            c = 0
-    index = 0 
-    for i in range (len(ans)) :
-        if ans[i].isalpha() :
-            index = i 
-            break 
-    return ans[index:]
 
 
+username =  "abhishekmahala28@gmail.com"
+password =  "Ab@8882810" 
 
-username =  input("username)
-password =  password("")
 
-path = input("path to the chromdriver)
-driver = webdriver.Chrome(path)
+driver = webdriver.Chrome('C:/Users/Abhishek Choudhary/.spyder-py3/chromedriver.exe')
 
 driver.get("https://www.freelancer.in/login")
 
 sleep(5)
-
 
 username_input = driver.find_element_by_xpath("//input[@placeholder='Email or Username']")
 password_input = driver.find_element_by_xpath("//input[@placeholder='Password']")
@@ -92,10 +72,11 @@ bid_amount.clear()
 bid_amount.send_keys(low_bid)
 
 
-
 description = driver.find_element_by_id("descriptionTextArea")
 description.clear()
-description.send_keys("hi I am ready to this Project")
+description.send_keys("We have done a lot of data entry work and have good data entry person and a send person will validate also so accuracy will be high.")
 
 
 
+place_bid = driver.find_element_by_xpath("//button[@data-color='secondary']")
+place_bid.click()
